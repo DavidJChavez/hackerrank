@@ -16,23 +16,16 @@ import (
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-func migratoryBirds(arr []int32) int32 {
-	freq := make(map[int32]int32)
+func migratoryBirds(arr []int32) int8 {
+	freq := make(map[int8]int32)
 	for _, val := range arr {
-		freq[val]++
+		freq[int8(val)]++
 	}
-	maxId := int32(0)
-	eqlId := int32(0)
-	for k, val := range freq {
-		if val > freq[maxId] {
-			maxId = k
+	maxId := int8(5)
+	for i := maxId - 1; i > 0; i-- {
+		if freq[i] >= freq[maxId] {
+			maxId = i
 		}
-		if val == freq[maxId] {
-			eqlId = k
-		}
-	}
-	if freq[eqlId] < freq[maxId] {
-		return eqlId
 	}
 	return maxId
 }
