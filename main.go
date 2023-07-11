@@ -1,9 +1,9 @@
 package main
 
 import (
-	divisible_sum_pairs "hackerrank/pkg/divisible-sum-pairs"
+	migratory_birds "hackerrank/pkg/migratory-birds"
 )
 
 func main() {
-	divisible_sum_pairs.DivisibleSumPairs()
+	migratory_birds.MigratoryBirds()
 }
