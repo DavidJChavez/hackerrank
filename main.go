@@ -1,9 +1,9 @@
 package main
 
 import (
-	migratory_birds "hackerrank/pkg/migratory-birds"
+	day_of_the_programmer "hackerrank/pkg/day-of-the-programmer"
 )
 
 func main() {
-	migratory_birds.MigratoryBirds()
+	day_of_the_programmer.DayOfTheProgrammer()
 }

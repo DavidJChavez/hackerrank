@@ -17,11 +17,29 @@ import (
  */
 
 func dayOfProgrammer(year int32) string {
-	// Write your code here
-
+	var d int32
+	if year >= 1700 && year <= 1917 {
+		// Is Julian
+		if year%4 == 0 {
+			d = int32(12)
+		} else {
+			d = int32(13)
+		}
+	} else if year == 1918 {
+		// Is transition year
+		d = 26
+	} else {
+		// Is Gregorian
+		if (year%4 == 0 && year%100 != 0) || (year%400 == 0) {
+			d = int32(12)
+		} else {
+			d = int32(13)
+		}
+	}
+	return fmt.Sprintf("%d.09.%d", d, year)
 }
 
-func main() {
+func DayOfTheProgrammer() {
 	reader := bufio.NewReaderSize(os.Stdin, 16*1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
